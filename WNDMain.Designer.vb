@@ -34,6 +34,8 @@ Partial Class WNDMain
         BTNConfirm = New Button()
         BTNRestart = New Button()
         LBLHint = New Label()
+        PBXDice = New PictureBox()
+        CType(PBXDice, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' LBLWelcome
@@ -141,11 +143,25 @@ Partial Class WNDMain
         LBLHint.Text = "Veuillez entrer un numéro de 1 à 6!"
         LBLHint.Visible = False
         ' 
+        ' PBXDice
+        ' 
+        PBXDice.ErrorImage = Nothing
+        PBXDice.Image = My.Resources.Resources.Dice1
+        PBXDice.InitialImage = Nothing
+        PBXDice.Location = New Point(448, 200)
+        PBXDice.Name = "PBXDice"
+        PBXDice.Size = New Size(128, 128)
+        PBXDice.SizeMode = PictureBoxSizeMode.StretchImage
+        PBXDice.TabIndex = 11
+        PBXDice.TabStop = False
+        PBXDice.Visible = False
+        ' 
         ' WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1008, 537)
+        Controls.Add(PBXDice)
         Controls.Add(LBLHint)
         Controls.Add(BTNRestart)
         Controls.Add(BTNConfirm)
@@ -163,6 +179,7 @@ Partial Class WNDMain
         Name = "WNDMain"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Jeu de dé"
+        CType(PBXDice, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -178,5 +195,6 @@ Partial Class WNDMain
     Friend WithEvents BTNConfirm As Button
     Friend WithEvents BTNRestart As Button
     Friend WithEvents LBLHint As Label
+    Friend WithEvents PBXDice As PictureBox
 
 End Class

@@ -45,6 +45,22 @@
             BTNConfirm.Visible = False
             TBXGuess.Visible = False
 
+            ' Show dice image representation
+            If Guess = 1 Then
+
+            ElseIf Guess = 2 Then
+
+            ElseIf Guess = 3 Then
+
+            ElseIf Guess = 4 Then
+
+            ElseIf Guess = 5 Then
+
+            ElseIf Guess = 6 Then
+
+            End If
+            PBXDice.Visible = True
+
             ' Calculate dice value
             Dice = (Rnd() * 6) + 1
             If Dice = Guess Then
