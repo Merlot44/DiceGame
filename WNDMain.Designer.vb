@@ -22,6 +22,7 @@ Partial Class WNDMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WNDMain))
         LBLWelcome = New Label()
         BTNStart = New Button()
         LBLName = New Label()
@@ -32,6 +33,7 @@ Partial Class WNDMain
         TBXGuess = New TextBox()
         BTNConfirm = New Button()
         BTNRestart = New Button()
+        LBLHint = New Label()
         SuspendLayout()
         ' 
         ' LBLWelcome
@@ -43,7 +45,6 @@ Partial Class WNDMain
         LBLWelcome.Size = New Size(848, 72)
         LBLWelcome.TabIndex = 0
         LBLWelcome.Text = "Bienvenue à la simulation d'un dé!"
-        LBLWelcome.UseWaitCursor = True
         ' 
         ' BTNStart
         ' 
@@ -54,7 +55,6 @@ Partial Class WNDMain
         BTNStart.TabIndex = 1
         BTNStart.Text = "Commencer"
         BTNStart.UseVisualStyleBackColor = True
-        BTNStart.UseWaitCursor = True
         ' 
         ' LBLName
         ' 
@@ -64,7 +64,6 @@ Partial Class WNDMain
         LBLName.Size = New Size(196, 15)
         LBLName.TabIndex = 2
         LBLName.Text = "Veuillez entrer vôre nom ci-dessous:"
-        LBLName.UseWaitCursor = True
         ' 
         ' TBXName
         ' 
@@ -72,7 +71,6 @@ Partial Class WNDMain
         TBXName.Name = "TBXName"
         TBXName.Size = New Size(196, 23)
         TBXName.TabIndex = 3
-        TBXName.UseWaitCursor = True
         ' 
         ' BTNInstructions
         ' 
@@ -82,7 +80,6 @@ Partial Class WNDMain
         BTNInstructions.TabIndex = 4
         BTNInstructions.Text = "Instructions"
         BTNInstructions.UseVisualStyleBackColor = True
-        BTNInstructions.UseWaitCursor = True
         BTNInstructions.Visible = False
         ' 
         ' BTNGuess
@@ -93,7 +90,6 @@ Partial Class WNDMain
         BTNGuess.TabIndex = 5
         BTNGuess.Text = "Deviner"
         BTNGuess.UseVisualStyleBackColor = True
-        BTNGuess.UseWaitCursor = True
         BTNGuess.Visible = False
         ' 
         ' TBXInstructions
@@ -104,7 +100,6 @@ Partial Class WNDMain
         TBXInstructions.Size = New Size(238, 73)
         TBXInstructions.TabIndex = 6
         TBXInstructions.Text = "Instructions :" & vbCrLf & "--------------" & vbCrLf & "Vous devez essayer de deviner le numéro dont le dé vas donner." & vbCrLf & vbCrLf
-        TBXInstructions.UseWaitCursor = True
         TBXInstructions.Visible = False
         ' 
         ' TBXGuess
@@ -113,7 +108,6 @@ Partial Class WNDMain
         TBXGuess.Name = "TBXGuess"
         TBXGuess.Size = New Size(37, 23)
         TBXGuess.TabIndex = 7
-        TBXGuess.UseWaitCursor = True
         TBXGuess.Visible = False
         ' 
         ' BTNConfirm
@@ -124,7 +118,6 @@ Partial Class WNDMain
         BTNConfirm.TabIndex = 8
         BTNConfirm.Text = "Confirmer"
         BTNConfirm.UseVisualStyleBackColor = True
-        BTNConfirm.UseWaitCursor = True
         BTNConfirm.Visible = False
         ' 
         ' BTNRestart
@@ -136,14 +129,24 @@ Partial Class WNDMain
         BTNRestart.TabIndex = 9
         BTNRestart.Text = "Recommencer?"
         BTNRestart.UseVisualStyleBackColor = True
-        BTNRestart.UseWaitCursor = True
         BTNRestart.Visible = False
+        ' 
+        ' LBLHint
+        ' 
+        LBLHint.AutoSize = True
+        LBLHint.Location = New Point(427, 223)
+        LBLHint.Name = "LBLHint"
+        LBLHint.Size = New Size(188, 15)
+        LBLHint.TabIndex = 10
+        LBLHint.Text = "Veuillez entrer un numéro de 1 à 6!"
+        LBLHint.Visible = False
         ' 
         ' WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1008, 537)
+        Controls.Add(LBLHint)
         Controls.Add(BTNRestart)
         Controls.Add(BTNConfirm)
         Controls.Add(TBXGuess)
@@ -154,9 +157,12 @@ Partial Class WNDMain
         Controls.Add(LBLName)
         Controls.Add(BTNStart)
         Controls.Add(LBLWelcome)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        MaximizeBox = False
         Name = "WNDMain"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Jeu de dé"
-        UseWaitCursor = True
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -171,5 +177,6 @@ Partial Class WNDMain
     Friend WithEvents TBXGuess As TextBox
     Friend WithEvents BTNConfirm As Button
     Friend WithEvents BTNRestart As Button
+    Friend WithEvents LBLHint As Label
 
 End Class
