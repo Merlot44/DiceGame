@@ -45,28 +45,30 @@
             BTNConfirm.Visible = False
             TBXGuess.Visible = False
 
+            ' Calculate dice value
+            Dice = (Rnd() * 6) + 1
+
             ' Show dice image representation
-            If Guess = 1 Then
-
-            ElseIf Guess = 2 Then
-
-            ElseIf Guess = 3 Then
-
-            ElseIf Guess = 4 Then
-
-            ElseIf Guess = 5 Then
-
-            ElseIf Guess = 6 Then
-
+            If Dice = 1 Then
+                PBXDice.Image = My.Resources.Dice1
+            ElseIf Dice = 2 Then
+                PBXDice.Image = My.Resources.Dice2
+            ElseIf Dice = 3 Then
+                PBXDice.Image = My.Resources.Dice3
+            ElseIf Dice = 4 Then
+                PBXDice.Image = My.Resources.Dice4
+            ElseIf Dice = 5 Then
+                PBXDice.Image = My.Resources.Dice5
+            ElseIf Dice = 6 Then
+                PBXDice.Image = My.Resources.Dice6
             End If
             PBXDice.Visible = True
 
-            ' Calculate dice value
-            Dice = (Rnd() * 6) + 1
+            ' Check guess validity
             If Dice = Guess Then
-                LBLWelcome.Text = "Félicitation " & PlayerName & "," & vbCrLf & "Vôtre choix est correcte!" ' Correct choice
+                LBLWelcome.Text = "Félicitation " & PlayerName & "," & vbCrLf & "vôtre choix est correcte!" ' Correct choice
             Else
-                LBLWelcome.Text = "Désolé " & PlayerName & "," & vbCrLf & "Vôtre choix est incorrecte!" ' Incorrect choice
+                LBLWelcome.Text = "Désolé " & PlayerName & "," & vbCrLf & "vôtre choix est incorrecte!" ' Incorrect choice
             End If
             BTNRestart.Visible = True ' Show restart button
         Else
@@ -83,6 +85,7 @@
         BTNStart.Visible = True
         BTNRestart.Visible = False
         TBXGuess.Text = ""
+        PBXDice.Visible = False
     End Sub
 
     Private Sub TBXGuess_TextChanged(sender As Object, e As EventArgs) Handles TBXGuess.TextChanged
