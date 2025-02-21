@@ -146,7 +146,6 @@ Partial Class WNDMain
         ' PBXDice
         ' 
         PBXDice.ErrorImage = Nothing
-        PBXDice.Image = My.Resources.Resources.Dice1
         PBXDice.InitialImage = Nothing
         PBXDice.Location = New Point(448, 200)
         PBXDice.Name = "PBXDice"

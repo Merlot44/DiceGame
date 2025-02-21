@@ -66,9 +66,9 @@
 
             ' Check guess validity
             If Dice = Guess Then
-                LBLWelcome.Text = "Félicitation " & PlayerName & "," & vbCrLf & "vôtre choix est correcte!" ' Correct choice
+                LBLWelcome.Text = "Félicitation " & PlayerName & "," & vbCrLf & "vôtre choix (" & Guess & ") est correcte!" ' Correct choice
             Else
-                LBLWelcome.Text = "Désolé " & PlayerName & "," & vbCrLf & "vôtre choix est incorrecte!" ' Incorrect choice
+                LBLWelcome.Text = "Désolé " & PlayerName & "," & vbCrLf & "vôtre choix (" & Guess & ") est incorrecte!" ' Incorrect choice
             End If
             BTNRestart.Visible = True ' Show restart button
         Else
